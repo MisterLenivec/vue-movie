@@ -159,7 +159,7 @@
                                     </div>
                                     <div class="item-info-product">
                                         <h4 class="">
-                                            <a href="#" class="editContent" >{{ movie.title }}</a>
+                                            <a href="#" @click="goTo(movie.id)" class="editContent" >{{ movie.title }}</a>
                                         </h4>
 
                                         <div class="product_price">
@@ -206,7 +206,9 @@ export default {
             this.listMovie = await fetch(
                 `${this.$store.getters.getServerUrl}/movie`
             ).then(response => response.json())
-            console.log(this.listMovie)
+        },
+        goTo(id) {
+            this.$router.push({name: 'Single', params: {id: id} })
         }
     },
 }

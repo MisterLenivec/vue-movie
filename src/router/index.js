@@ -14,7 +14,8 @@ Vue.use(VueRouter)
   {
     path: '/:id',
     name: 'Single',
-    component: Single
+    component: Single,
+    props: true
   },
   {
     path: '/about',
@@ -27,6 +28,7 @@ Vue.use(VueRouter)
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 
